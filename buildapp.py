@@ -63,7 +63,7 @@ with st.sidebar:
     st.divider()
     st.info("System Online")
 
-st.title("🏫 School Maintenance Management System")
+st.title("🏫 PTES Maintenance Management System")
 
 # Navigation Tabs
 tab1, tab2, tab3 = st.tabs(["📝 New Complaint", "📋 Submitted List", "🔐 Admin & Action"])
@@ -79,7 +79,7 @@ with tab1:
             phone = st.text_input("Contact Number (WhatsApp)")
         with c2:
             designation = st.selectbox("Designation",
-                                       ["Support Officer","Security Team","Non-Teaching Staff","Administrator","Teaching-Staff","Others"])
+                                       ["BMS","Teaching Staff",""Support Officer","Security","Non-Teaching Staff","Administrator","Others"])
             date_today = st.date_input("Today's Date", datetime.now())
             area = st.selectbox("Building Area",
                                 ["Classroom", "Science Building", "Library", "Green Area", "SA Area", "Parking Area", "Admin Block", "Theatre",
