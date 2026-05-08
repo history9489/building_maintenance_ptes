@@ -75,25 +75,26 @@ with tab1:
         c1, c2 = st.columns(2)
         with c1:
             dept = st.text_input("Department/Section")
-            name = st.text_input("Name of Complainer")
+            name = st.text_input("Your Full Name")
             phone = st.text_input("Contact Number (WhatsApp)")
         with c2:
             designation = st.text_input("Designation")
             date_today = st.date_input("Today's Date", datetime.now())
             area = st.selectbox("Building Area",
-                                ["Classroom", "Science Building", "Library", "Staffroom 1", "Staffroom 2", "HODs Room",
-                                 "Canteen", "Admin Garage", "Other"])
+                                ["Classroom", "Science Building", "Library", "Green Area", "SA Area",
+                                 "Sick Bay", "Counselling", "Examination", "SA Staffroom", "Admin Foyer"
+                                 "Canteen", "Admin Garage", "Water Tank&Pump", "Security Office", "Other"])
 
         room_name = st.selectbox("Room Name",
-                                 ["LT1", "LT2", "MPH", "MMT", "Surau", "Kitchen", "Washroom", "Science Lab",
-                                  "Computer Lab", "Other"])
+                                 ["LT1", "LT2", "MPH", "MMT", "Surau", "Staffroom 1", "Staffroom 2", "HODs Room", "Kitchen", "Washroom", "Science Lab",
+                                  "Examination", "Sick Bay", "Registration", "Store Room", "Computer Lab", "SMART Classroom", "Admin Office", "Other"])
         level = st.select_slider("Level/Floor",
                                  options=["Ground", "Level 1", "Level 2", "Level 3", "Level 4", "Level 5"])
         room_no = st.text_input("Specific Room Number")
 
         details = st.text_area("Complaint Details (Explain fully)", height=100)
         duration = st.selectbox("Duration of fault",
-                                ["less than 2 days", "more than 5 days", "more than a week", "more than a month"])
+                                ["less than 2 days", "more than 5 days", "more than 2 week", "more than a month"])
 
         if st.form_submit_button("SUBMIT COMPLAINT"):
             sheet = connect_to_sheet()
@@ -103,7 +104,7 @@ with tab1:
                 new_row = [str(datetime.now()), dept, name, phone, designation, str(date_today),
                            area, room_name, level, room_no, details, duration, ticket, "Pending", "Waiting for update"]
                 sheet.append_row(new_row)
-                st.success(f"SUCCESS! Ticket Number: {ticket}")
+                st.success(f"SUCCESS!! Keep Your Complain Ticket Number : {ticket}")
                 st.balloons()
 
 # --- 4. TAB 2: PUBLIC VIEW ---
