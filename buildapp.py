@@ -82,7 +82,7 @@ with tab1:
             date_today = st.date_input("Today's Date", datetime.now())
             area = st.selectbox("Building Area",
                                 ["Classroom", "Science Building", "Library", "Green Area", "SA Area", "Parking Area", "Admin Block", "Theatre",
-                                 "SA Staffroom", "Admin Foyer", "Canteen", "Admin Garage", "Water Tank / Pump", "Security Office", "Others"])
+                                 "SA Staffroom", "Admin Foyer", "Canteen", "Admin Garage", "Water Tank / Pump", "Security Post", "Others"])
 
         room_name = st.selectbox("Room Name",
                                  ["LT1", "LT2", "MPH", "MMT", "Surau", "Staffroom 1", "Staffroom 2", "HODs Room", "Kitchen", "Washroom", "Science Lab",
