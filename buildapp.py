@@ -78,8 +78,7 @@ with tab1:
             name = st.text_input("Your Full Name")
             phone = st.text_input("Contact Number (WhatsApp)")
         with c2:
-            designation = st.selectbox("Designation",
-                                       ["BMS","Teaching Staff",""Support Officer","Security","Non-Teaching Staff","Administrator","Others"])
+            designation = st.selectbox("Designation",["BMS", "Teaching Staff", "Support Officer", "Security", "Non-Teaching Staff", "Administrator", "Others"])
             date_today = st.date_input("Today's Date", datetime.now())
             area = st.selectbox("Building Area",
                                 ["Classroom", "Science Building", "Library", "Green Area", "SA Area", "Parking Area", "Admin Block", "Theatre",
