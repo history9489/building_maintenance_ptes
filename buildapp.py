@@ -39,7 +39,7 @@ def generate_ticket():
     return "TIC-" + ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
 
 # --- 2. PAGE CONFIG & SIDEBAR MANUAL ---
-st.set_page_config(page_title="Maintenance Portal", layout="wide")
+st.set_page_config(page_title="PTES BMO Portal", layout="wide")
 
 with st.sidebar:
     st.title("📖 User Guide")
@@ -63,7 +63,7 @@ with st.sidebar:
     st.divider()
     st.info("System Online")
 
-st.title("🏫 PTES Maintenance Management System")
+st.title("🏫 PTES Maintenance Portal")
 
 # Navigation Tabs
 tab1, tab2, tab3 = st.tabs(["📝 New Complaint", "📋 Submitted List", "🔐 Admin & Action"])
