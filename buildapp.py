@@ -55,7 +55,7 @@ with st.sidebar:
 
     ### 🛠️ Admin Instructions
     1. Go to **Admin & Action**.
-    2. Enter password: `admin123`.
+    2. Enter the Admin's password.
     3. Enter the Ticket Number provided by the user.
     4. Set the 'Authority Date' and add your 'Remarks'.
     5. Click **Update Database**.
