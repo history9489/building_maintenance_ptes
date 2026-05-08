@@ -7,17 +7,32 @@ import string
 import pandas as pd
 
 # --- 1. DATABASE CONNECTION ---
-def connect_to_sheet():
+# def connect_to_sheet():
     # Make sure this matches your Google Sheet name exactly
+    # SHEET_NAME = "School_Maintenance_DB"
+    # scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+
+    #try:
+    #   creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
+    #   client = gspread.authorize(creds)
+    #   return client.open(SHEET_NAME).sheet1
+    #except Exception as e:
+    #   st.error(f"Connection Error: Ensure 'creds.json' exists and Sheet name is correct. {e}")
+    #   return None
+
+#----- 1. UPDATE connection ------
+def connect_to_sheet():
     SHEET_NAME = "School_Maintenance_DB"
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
     try:
-        creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
+        # This line changes to use Streamlit Secrets instead of the json file
+        creds_dict = st.secrets["gcp_service_account"]
+        creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
         client = gspread.authorize(creds)
         return client.open(SHEET_NAME).sheet1
     except Exception as e:
-        st.error(f"Connection Error: Ensure 'creds.json' exists and Sheet name is correct. {e}")
+        st.error(f"Connection Error: {e}")
         return None
 
 def generate_ticket():
