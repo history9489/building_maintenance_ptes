@@ -78,15 +78,16 @@ with tab1:
             name = st.text_input("Your Full Name")
             phone = st.text_input("Contact Number (WhatsApp)")
         with c2:
-            designation = st.text_input("Designation",["Support Officer","Non-Teaching Staff","Administrator","Teaching-Staff"])
+            designation = st.selectbox("Designation",
+                                       ["Support Officer","Security Team","Non-Teaching Staff","Administrator","Teaching-Staff","Others"])
             date_today = st.date_input("Today's Date", datetime.now())
             area = st.selectbox("Building Area",
                                 ["Classroom", "Science Building", "Library", "Green Area", "SA Area", "Parking Area", "Admin Block", "Theatre",
-                                 "SA Staffroom", "Admin Foyer", "Canteen", "Admin Garage", "Water Tank / Pump", "Security Office", "Other"])
+                                 "SA Staffroom", "Admin Foyer", "Canteen", "Admin Garage", "Water Tank / Pump", "Security Office", "Others"])
 
         room_name = st.selectbox("Room Name",
                                  ["LT1", "LT2", "MPH", "MMT", "Surau", "Staffroom 1", "Staffroom 2", "HODs Room", "Kitchen", "Washroom", "Science Lab",
-                                  "Examination", "Sick Bay", "Registration", "Store Room", "Computer Lab 1", "SMART Lab / ICT 2", "Admin Office", "Other"])
+                                  "Examination", "Sick Bay", "Registration", "Store Room", "Computer Lab 1", "SMART Lab / ICT 2", "Admin Office", "Others"])
         level = st.select_slider("Level/Floor",
                                  options=["Ground", "Level 1", "Level 2", "Level 3", "Level 4", "Level 5"])
         room_no = st.text_input("Room Number or Not Available")
