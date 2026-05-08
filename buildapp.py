@@ -118,14 +118,17 @@ with tab2:
             st.info("No records found in the database.")
 
 # --- 5. TAB 3: ADMIN MANAGEMENT & ACTION SEARCH ---
+#----- use secret to hide the password of admin ---
+
 with tab3:
     col_admin, col_search = st.columns([1, 1])
 
     with col_admin:
         st.subheader("🛠️ Admin Transaction")
-        password = st.text_input("Enter Admin Password", type="password")
+        password_input = st.text_input("Enter Admin Password", type="password")
 
-        if password == "admin123":
+        # Pull the password from Streamlit Secrets instead of quoting it here
+        if password_input == st.secrets["admin_credentials"]["password"]:
             st.write("---")
             t_id = st.text_input("Search Ticket to Update (e.g. TIC-XXXXXX)")
 
